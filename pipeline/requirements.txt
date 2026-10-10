@@ -8,3 +8,4 @@ requests
 opencv-python-headless   # reading videos (.mp4, .avi)
 openpyxl      # only for reading .xlsx exports
 pypdf         # only for reading PDF manuals
+neo4j         # only for diagnose_from_graph.py with Neo4j

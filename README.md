@@ -23,6 +23,8 @@ pip install -r pipeline/requirements.txt
 python pipeline/run_pipeline.py
 ```
 
+New to the code? Start with [`CODE_GUIDE.md`](CODE_GUIDE.md), which explains every file in plain language.
+
 For the knowledge graph, follow the Neo4j steps in [`knowledge_graph/README.md`](knowledge_graph/README.md).
 
 ## Data

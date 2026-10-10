@@ -44,7 +44,7 @@ python run_pipeline.py --llm ollama --model qwen2.5vl:7b --image-to-llm
 | 6 Optimiser | `optimiser.py` | Searches for better parameters with the surrogate, only in the directions the knowledge graph allows | Guerra et al. 2026; Bhoir & Verma 2026 |
 | 7 Evaluation | `evaluate.py`, `run_pipeline.py` | Accuracy, macro-F1, calibration (ECE), coverage of "unknown", modality ablation, report validity and evidence citation rates | Several; see the research plan |
 
-Full citations are in the research plan document and in [`../literature/00_INDEX.md`](../literature/00_INDEX.md).
+Full citations are in the research plan document.
 
 ## 3. Results on the synthetic demo
 

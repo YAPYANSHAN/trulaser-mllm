@@ -12,7 +12,6 @@ The full research plan, with 49 cited papers, is an online document: [FYP Resear
 |---|---|---|
 | [`pipeline/`](pipeline/) | Python/PyTorch pipeline: table, image and video models, fusion with an "unknown" option, knowledge-graph lookup, manual retrieval, optimiser and LLM report (offline rules or Ollama) | [`pipeline/README.md`](pipeline/README.md) |
 | [`knowledge_graph/`](knowledge_graph/) | Example event-centric multimodal knowledge graph: three weeks of made-up machine history (events, photos, videos, manual facts) and Neo4j scripts to load and query it | [`knowledge_graph/README.md`](knowledge_graph/README.md) |
-| [`literature/`](literature/) | One summary note per reviewed paper (192), and a ranked index | [`literature/00_INDEX.md`](literature/00_INDEX.md) |
 
 ## Quick start
 
@@ -34,4 +33,4 @@ The pipeline creates its own demo data (`pipeline/demo_data/`, about 40 MB) on t
 
 ## Not included
 
-- Full texts and PDFs of the papers, which are copyrighted. The notes in `literature/` are summaries; the original PDFs stay in your own folder.
+- Literature: paper PDFs, full texts and the reading notes are kept outside this repository.

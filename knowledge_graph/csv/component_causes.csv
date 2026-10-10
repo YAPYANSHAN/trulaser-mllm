@@ -1,0 +1,5 @@
+component,cause
+nozzle,worn_nozzle
+protective glass,dirty_protective_glass
+gas supply,low_gas_pressure
+bevel axis,bevel_axis_drift

@@ -67,6 +67,11 @@ def rule_based_report(packet: dict) -> dict:
     if label == "unknown":
         actions = [{"action": a, "detail": "System is unsure; collect more evidence.", "evidence_ids": ["E_DEC"]}
                    for a in packet["allowed_actions"]]
+        # still name the causes the evidence points to for the best guess, as low-confidence leads
+        for c in causes:
+            if c["support"] > 0:
+                ids = [i for i, e in ev_ids.items() if e.get("signature") in c["matched_evidence"]]
+                root.append({"cause": c["cause"], "evidence_ids": ids, "confidence": "low"})
     else:
         for c in causes:
             ids = [i for i, e in ev_ids.items() if e.get("signature") in c["matched_evidence"]]

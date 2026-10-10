@@ -6,6 +6,7 @@ This folder lets you try the working principle in your research plan (section "E
 
 | File | What it holds | Rows |
 |---|---|---|
+| `CSV_GUIDE.md` | Plain-language guide to every CSV file, following one job through all of them | |
 | `csv/events.csv` | Every event in time order: jobs, inspections, alarms, maintenance | 494 |
 | `csv/jobs.csv` | Parameters of each job (material, thickness, power, speed, gas pressure, bevel angle, jobs since nozzle change) | 240 |
 | `csv/photos.csv` | One photo per job: file, what the image model said, confidence, and a 64-number embedding for similarity search | 240 |

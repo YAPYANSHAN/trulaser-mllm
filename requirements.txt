@@ -1,0 +1,19 @@
+# Python packages the notebooks need. Install once with:
+#   pip install -r requirements.txt
+# Lower bounds only, so it also works on newer Python versions.
+pandas>=2.2
+numpy>=1.26
+matplotlib>=3.8
+scikit-learn>=1.4
+scipy>=1.11
+pillow>=10.0
+networkx>=3.2
+openpyxl>=3.1
+requests>=2.31        # notebook 05 talks to Ollama
+neo4j>=5.20           # notebook 07
+owlready2>=0.46       # notebook 08 (also needs Java for the HermiT reasoner)
+jupyter>=1.0
+
+# Optional: adds the ResNet-18 rows in notebook 09 (about 1 GB download)
+# torch>=2.2
+# torchvision>=0.17

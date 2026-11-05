@@ -2,7 +2,7 @@
 
 This folder is everything the production team handed over for the project. It covers six weeks of production, from 1 September to 10 October 2026, on one machine.
 
-> **This data is synthetic.** It was generated to behave like a real factory export, including the gaps and inconsistencies. It contains no real company or TRUMPF data, and the guide and manual in `documents/` are not TRUMPF manuals.
+> **This data is synthetic.** It was generated to behave like a real factory export, including the gaps and inconsistencies. It contains no real company or TRUMPF data, and the manual in `documents/` is not a TRUMPF manual.
 
 ## What the team asked for
 
@@ -20,8 +20,7 @@ Nobody has labelled the root causes. The team only knows what the inspectors wro
 | `quality/inspection_records.csv` | Quality inspection sheet | ~420 jobs | Not every job was inspected. Defect names are free text, so the same defect is spelled several ways. Some job IDs were typed differently. Dross height, Ra and bevel angle were only measured sometimes. |
 | `quality/photos/` | Photo of a cut edge, named by job ID | ~380 images | Taken by phone on the inspection bench, so lighting varies and a few are blurry or named oddly. |
 | `process_video/` | Short clip from the coaxial process camera, named by job ID | ~200 clips | The camera was installed on 14 September and only records when storage allows, so about half the jobs from then on have a clip. |
-| `documents/troubleshooting_guide.pdf` | Internal cut-quality troubleshooting guide | 3 pages | Symptoms, causes, remedies, machine message codes, maintenance intervals. |
-| `documents/machine_manual.pdf` | Full operating and maintenance manual for the cell (Rev 3) | 66 pages | Same troubleshooting knowledge as the guide, spread across chapters, tables, figure captions and cross-references. Appendix C is for the old Cell 1 machine and does not apply here. Use it to practise reading a long manual. |
+| `documents/machine_manual.pdf` | Full operating and maintenance manual for the cell (Rev 3) | 66 pages | Safety, operation, cutting tables, maintenance intervals (ch. 8), message codes (ch. 9) and cut-quality troubleshooting (ch. 10). Facts are spread across tables, prose, figure captions and cross-references. Appendix C is for the old Cell 1 machine and does not apply here. |
 | `documents/cutting_table.csv` | Recommended cutting parameters per material and thickness | 13 rows | Starting values. Operators adjust them. |
 
 ## Words you will see

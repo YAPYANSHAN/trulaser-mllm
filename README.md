@@ -13,6 +13,15 @@ The aim is a tool that looks at a laser-cutting job and explains what went wrong
 
 The project starts from the data only. Code is added step by step as the work goes on.
 
+## Running the notebooks
+
+```
+pip install -r requirements.txt
+python run_all.py                 # runs notebooks/01 to 10 in order, saving outputs
+python run_all.py 09 10           # only these
+python run_all.py --skip 05 07    # skip the ones needing Ollama (05) or Neo4j (07)
+```
+
 ## Plan of work
 
 1. **Explore the data.** Open each file, count rows, look at photos and clips, and write down what is missing or messy.

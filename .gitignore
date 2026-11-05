@@ -30,3 +30,7 @@ desktop.ini
 .vscode/
 .idea/
 /graphify-out
+
+# NSCC job logs
+ollama_*.log
+fyp_nb.o*

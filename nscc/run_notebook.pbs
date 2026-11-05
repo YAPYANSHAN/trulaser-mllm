@@ -1,0 +1,30 @@
+#!/bin/bash
+# Runs a notebook on one NSCC ASPIRE 2A GPU, with Ollama serving the LLM on the same node.
+# Submit from the repo folder:   qsub nscc/run_notebook.pbs
+# Another notebook:              qsub -v NB=05_diagnose_with_llm.ipynb nscc/run_notebook.pbs
+#PBS -N fyp_nb
+#PBS -q normal
+#PBS -l select=1:ncpus=16:ngpus=1:mem=64gb
+#PBS -l walltime=02:00:00
+#PBS -j oe
+
+set -euo pipefail
+cd "$PBS_O_WORKDIR"
+NB="${NB:-11_manual_to_graph_facts.ipynb}"
+
+module load miniforge3
+source activate fyp
+
+export PATH="$HOME/ollama/bin:$PATH"
+export OLLAMA_MODELS="$HOME/ollama-models"   # filled once on the login node (see nscc/README.md)
+ollama serve > "ollama_${PBS_JOBID}.log" 2>&1 &
+OLLAMA_PID=$!
+trap 'kill $OLLAMA_PID' EXIT
+for i in $(seq 60); do curl -s localhost:11434/api/tags > /dev/null && break; sleep 2; done
+
+nvidia-smi --query-gpu=name,memory.used,memory.total --format=csv
+# Runs inside notebooks/, so the notebook's ../datasets and ../data paths work. Outputs are saved into the .ipynb.
+jupyter nbconvert --to notebook --execute --inplace \
+    --ExecutePreprocessor.timeout=-1 "notebooks/$NB"
+ollama ps
+echo "Done: notebooks/$NB"

@@ -5,7 +5,7 @@ Usage, from the repo folder:
     python run_all.py 09 10           # run only these
     python run_all.py --skip 05 07    # run all except these
 
-Needs: notebook 05 needs Ollama running, 07 needs Neo4j running, 08 needs Java.
+Needs: notebooks 05 and 11 need Ollama running, 07 needs Neo4j running, 08 needs Java.
 If one notebook fails, the rest still run, and a summary at the end says which failed.
 """
 import sys

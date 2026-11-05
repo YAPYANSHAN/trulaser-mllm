@@ -28,9 +28,9 @@ python run_all.py --skip 05 07    # skip the ones needing Ollama (05) or Neo4j (
 2. **Clean and link.** Fix decimal commas and date formats, match inspection rows to jobs, and give every alarm and maintenance entry a place on the timeline.
 3. **Build the event timeline.** Put jobs, alarms, maintenance and inspections in one time-ordered list. This becomes the event layer of the knowledge graph.
 4. **Detect defects.** Train simple models on the job table, photos and videos, and check how well each works alone and together.
-5. **Build the knowledge graph.** Turn the troubleshooting guide into cause and remedy facts, and link them to the events, photos and clips in Neo4j.
+5. **Build the knowledge graph.** Turn the machine manual into cause and remedy facts, and link them to the events, photos and clips in Neo4j.
 6. **Retrieve and explain.** For a new job, pull the relevant part of the graph and let a local LLM write a cited diagnosis.
-7. **Evaluate.** Compare against simpler versions, such as the LLM alone or the guide text alone.
+7. **Evaluate.** Compare against simpler versions, such as the LLM alone or the manual text alone.
 
 The full research plan is an online document: [FYP Research Plan](https://claude.ai/code/artifact/37a2aff2-24ac-4253-b6e5-ca5c7ae74a4d).
 

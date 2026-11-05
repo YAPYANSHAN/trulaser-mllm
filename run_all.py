@@ -8,10 +8,12 @@ Usage, from the repo folder:
 Needs: notebook 05 needs Ollama running, 07 needs Neo4j running, 08 needs Java.
 If one notebook fails, the rest still run, and a summary at the end says which failed.
 """
-import subprocess
 import sys
 import time
 from pathlib import Path
+
+import nbformat
+from nbclient import NotebookClient
 
 NB_DIR = Path(__file__).parent / "notebooks"
 
@@ -30,10 +32,16 @@ def main(args):
     for nb in notebooks:
         print(f"Running {nb.name} ...", flush=True)
         start = time.time()
-        # --inplace saves outputs into the notebook; no timeout because the LLM notebook is slow
-        done = subprocess.run([sys.executable, "-m", "jupyter", "nbconvert", "--to", "notebook", "--execute",
-                               "--inplace", "--ExecutePreprocessor.timeout=-1", str(nb)])
-        ok = done.returncode == 0
+        # run inside this Python (no jupyter-nbconvert.exe, which Windows Smart App Control can block)
+        notebook = nbformat.read(nb, as_version=4)
+        try:
+            NotebookClient(notebook, timeout=None, kernel_name="python3",
+                           resources={"metadata": {"path": str(NB_DIR)}}).execute()
+            ok = True
+        except Exception as e:
+            print(f"  error: {str(e).strip().splitlines()[-1]}")
+            ok = False
+        nbformat.write(notebook, nb)  # save outputs, including the error cell if it failed
         results.append((nb.name, ok, time.time() - start))
         print(f"  {'OK' if ok else 'FAILED'} in {time.time() - start:.0f} s\n", flush=True)
 

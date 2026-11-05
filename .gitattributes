@@ -1,0 +1,2 @@
+# Store notebooks with LF line endings on every OS, so saving one doesn't rewrite every line of it in git.
+*.ipynb text eol=lf

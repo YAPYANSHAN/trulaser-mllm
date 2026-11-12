@@ -1,11 +1,11 @@
-"""Run every notebook in notebooks/ in order (01, 02, ... 10) and save the outputs inside each notebook.
+"""Run every notebook in notebooks/ in order (01, 02, ... 11) and save the outputs inside each notebook.
 
 Usage, from the repo folder:
     python run_all.py                 # run all notebooks
     python run_all.py 09 10           # run only these
     python run_all.py --skip 05 07    # run all except these
 
-Needs: notebooks 05 and 11 need Ollama running, 07 needs Neo4j running, 08 needs Java.
+Needs: 07 needs Neo4j running and 08 needs Java. 05 and 11 use Ollama; without it they run but skip their LLM steps.
 If one notebook fails, the rest still run, and a summary at the end says which failed.
 """
 import sys
